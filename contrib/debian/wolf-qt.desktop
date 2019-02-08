@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=WOLF
+Comment=WOLF P2P Cryptocurrency
+Comment[fr]=WOLF, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=WOLF, eşten eşe kriptografik sanal para birimi
+Exec=wolf-qt %u
+Terminal=false
+Type=Application
+Icon=wolf128
+MimeType=x-scheme-handler/wolf;
+Categories=Office;Finance;

@@ -1,0 +1,11 @@
+[Protocol]
+exec=wolf-qt '%u'
+protocol=wolf
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

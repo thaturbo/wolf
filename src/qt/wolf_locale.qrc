@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/wolf_bg.qm</file>
+        <file alias="de">locale/wolf_de.qm</file>
+        <file alias="en">locale/wolf_en.qm</file>
+        <file alias="es">locale/wolf_es.qm</file>
+        <file alias="fi">locale/wolf_fi.qm</file>
+        <file alias="fr">locale/wolf_fr.qm</file>
+        <file alias="it">locale/wolf_it.qm</file>
+        <file alias="ja">locale/wolf_ja.qm</file>
+        <file alias="pl">locale/wolf_pl.qm</file>
+        <file alias="pt">locale/wolf_pt.qm</file>
+        <file alias="ru">locale/wolf_ru.qm</file>
+        <file alias="sk">locale/wolf_sk.qm</file>
+        <file alias="sv">locale/wolf_sv.qm</file>
+        <file alias="vi">locale/wolf_vi.qm</file>
+        <file alias="zh_CN">locale/wolf_zh_CN.qm</file>
+        <file alias="zh_TW">locale/wolf_zh_TW.qm</file>
+    </qresource>
+</RCC>

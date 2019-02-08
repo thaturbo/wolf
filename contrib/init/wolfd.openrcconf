@@ -1,0 +1,33 @@
+# /etc/conf.d/wolfd: config file for /etc/init.d/wolfd
+
+# Config file location
+#WOLFD_CONFIGFILE="/etc/wolfcore/wolf.conf"
+
+# What directory to write pidfile to?  (created and owned by $WOLFD_USER)
+#WOLFD_PIDDIR="/var/run/wolfd"
+
+# What filename to give the pidfile
+#WOLFD_PIDFILE="${WOLFD_PIDDIR}/wolfd.pid"
+
+# Where to write wolfd data (be mindful that the blockchain is large)
+#WOLFD_DATADIR="/var/lib/wolfd"
+
+# User and group to own wolfd process
+#WOLFD_USER="wolfcore"
+#WOLFD_GROUP="wolfcore"
+
+# Path to wolfd executable
+#WOLFD_BIN="/usr/bin/wolfd"
+
+# Nice value to run wolfd under
+#WOLFD_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+WOLFD_OPTS="-disablewallet"
+
+# The timeout in seconds OpenRC will wait for wolfd to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+WOLFD_SIGTERM_TIMEOUT=60

@@ -1,0 +1,92 @@
+#!/sbin/runscript
+
+# backward compatibility for existing gentoo layout 
+#
+if [ -d "/var/lib/wolfcore/.wolfcore" ]; then
+	WOLFD_DEFAULT_DATADIR="/var/lib/wolfcore/.wolfcore"
+else
+	WOLFD_DEFAULT_DATADIR="/var/lib/wolfd"
+fi
+
+WOLFD_CONFIGFILE=${WOLFD_CONFIGFILE:-/etc/wolfcore/wolf.conf}
+WOLFD_PIDDIR=${WOLFD_PIDDIR:-/var/run/wolfd}
+WOLFD_PIDFILE=${WOLFD_PIDFILE:-${WOLFD_PIDDIR}/wolfd.pid}
+WOLFD_DATADIR=${WOLFD_DATADIR:-${WOLFD_DEFAULT_DATADIR}}
+WOLFD_USER=${WOLFD_USER:-${WOLF_USER:-wolfcore}}
+WOLFD_GROUP=${WOLFD_GROUP:-wolfcore}
+WOLFD_BIN=${WOLFD_BIN:-/usr/bin/wolfd}
+WOLFD_NICE=${WOLFD_NICE:-${NICELEVEL:-0}}
+WOLFD_OPTS="${WOLFD_OPTS:-${WOLF_OPTS}}"
+
+name="WOLF Core Daemon"
+description="WOLF cryptocurrency P2P network daemon"
+
+command="/usr/bin/wolfd"
+command_args="-pid=\"${WOLFD_PIDFILE}\" \
+		-conf=\"${WOLFD_CONFIGFILE}\" \
+		-datadir=\"${WOLFD_DATADIR}\" \
+		-daemon \
+		${WOLFD_OPTS}"
+
+required_files="${WOLFD_CONFIGFILE}"
+start_stop_daemon_args="-u ${WOLFD_USER} \
+			-N ${WOLFD_NICE} -w 2000"
+pidfile="${WOLFD_PIDFILE}"
+
+# The retry schedule to use when stopping the daemon. Could be either
+# a timeout in seconds or multiple signal/timeout pairs (like
+# "SIGKILL/180 SIGTERM/300")
+retry="${WOLFD_SIGTERM_TIMEOUT}"
+
+depend() {
+	need localmount net
+}
+
+# verify
+# 1) that the datadir exists and is writable (or create it)
+# 2) that a directory for the pid exists and is writable
+# 3) ownership and permissions on the config file
+start_pre() {
+	checkpath \
+	-d \
+	--mode 0750 \
+	--owner "${WOLFD_USER}:${WOLFD_GROUP}" \
+	"${WOLFD_DATADIR}"
+
+	checkpath \
+	-d \
+	--mode 0755 \
+	--owner "${WOLFD_USER}:${WOLFD_GROUP}" \
+	"${WOLFD_PIDDIR}"
+
+	checkpath -f \
+	-o ${WOLFD_USER}:${WOLFD_GROUP} \
+	-m 0660 \
+	${WOLFD_CONFIGFILE}
+
+	checkconfig || return 1
+}
+
+checkconfig()
+{
+	if ! grep -qs '^rpcpassword=' "${WOLFD_CONFIGFILE}" ; then
+		eerror ""
+		eerror "ERROR: You must set a secure rpcpassword to run wolfd."
+		eerror "The setting must appear in ${WOLFD_CONFIGFILE}"
+		eerror ""
+		eerror "This password is security critical to securing wallets "
+		eerror "and must not be the same as the rpcuser setting."
+		eerror "You can generate a suitable random password using the following"
+		eerror "command from the shell:"
+		eerror ""
+		eerror "bash -c 'tr -dc a-zA-Z0-9 < /dev/urandom | head -c32 && echo'"
+		eerror ""
+		eerror "It is also recommended that you also set alertnotify so you are "
+		eerror "notified of problems:"
+		eerror ""
+		eerror "ie: alertnotify=echo %%s | mail -s \"WOLF Core Alert\"" \
+			"admin@foo.com"
+		eerror ""
+		return 1
+	fi
+}

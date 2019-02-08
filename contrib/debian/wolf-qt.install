@@ -1,0 +1,6 @@
+usr/local/bin/wolf-qt usr/bin
+share/pixmaps/wolf32.xpm usr/share/pixmaps
+share/pixmaps/wolf16.xpm usr/share/pixmaps
+share/pixmaps/wolf128.png usr/share/pixmaps
+debian/wolf-qt.desktop usr/share/applications
+debian/wolf-qt.protocol usr/share/kde4/services/
