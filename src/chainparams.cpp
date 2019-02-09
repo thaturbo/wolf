@@ -199,7 +199,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("a46c801ea152724760d8dde1b9169108c4f083f737339dc86947e04a3e3137ca"));
 
         vSeeds.push_back(CDNSSeedData("157.230.150.191", "157.230.150.191"));
-        vSeeds.push_back(CDNSSeedData("", ""));
+        vSeeds.push_back(CDNSSeedData("wolfpack.geekgalaxy.com", "wolfpack.geekgalaxy.com"));
         vSeeds.push_back(CDNSSeedData("", ""));
         vSeeds.push_back(CDNSSeedData("", ""));
         vSeeds.push_back(CDNSSeedData("", ""));
