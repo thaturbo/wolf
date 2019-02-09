@@ -11,6 +11,7 @@ This Distribution (economic model) is stable adoption based giving nodes,mastern
 
 It will not only fairly reward miners but help grow the network.
 Value will be more stable and grow with the network, less spikes.
+
 This concept is the wolfpack cornerstone.
 ------------        ---
 
