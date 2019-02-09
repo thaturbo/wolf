@@ -6,7 +6,7 @@ The REST API can be enabled with the `-rest` option.
 Supported API
 -------------
 
-#### Transactions
+### Transactions
 `GET /rest/tx/<TX-HASH>.<bin|hex|json>`
 
 Given a transaction hash: returns a transaction in binary, hex-encoded binary, or JSON formats.
