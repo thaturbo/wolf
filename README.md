@@ -12,7 +12,7 @@ This concept is the wolf cornerstone.
 
 
 
-![wolfpack](https://github.com/wolfxpack/src/qt/res/icons/wolf.png)
+<img src="/src/qt/res/icons/wolf.png" alt="wolfpack"/>
 
 
 
