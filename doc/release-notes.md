@@ -21,6 +21,6 @@ we have used current stable x16r and lwma and have used the reverse crypto model
 no fake growth promise
 pure steady features
 
-If you are reading this you are the resistance  
+If you are reading this you are the resistance * 
 
 
