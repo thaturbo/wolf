@@ -10,6 +10,22 @@ Value will be more stable and grow with the network, less spikes.
 This concept is the wolf cornerstone.
 ------------        ---
 
+![Alt text](wold/src/qt/res/wolf.png?raw=true "wolf")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 License
 -------
 
