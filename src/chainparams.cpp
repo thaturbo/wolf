@@ -324,8 +324,8 @@ public:
        // assert(consensus.hashGenesisBlock == uint256S("0x00000ba049e5c1f95474ea3fc62d5f1b1632a294c20c22fea701134a43cf3068"));
         //assert(genesis.hashMerkleRoot == uint256S("0xd5dec0980d7b84cc1c048eb8706afe68bbbdb07fdefab76de8d176dfcb858ae8"));
 
-        vSeeds.push_back(CDNSSeedData("testnet.wolfproject.org", "testnet.seed.wolfproject.org"));
-        vSeeds.push_back(CDNSSeedData("fixed-seeds.wolfproject.org", "testnet.fixed-seeds.wolfproject.org"));
+        vSeeds.push_back(CDNSSeedData("testnet.wolfproject.net", "testnet.seed.wolfproject.net"));
+        vSeeds.push_back(CDNSSeedData("seed.wolfproject.net", "testnet.fixed-seeds.wolfproject.net"));
         // vFixedSeeds.clear();
         // vSeeds.clear();
 
