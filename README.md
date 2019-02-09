@@ -12,8 +12,8 @@ This concept is the wolf cornerstone.
 
 
 
+![wolfpack](https://github.com/wolfxpack/src/qt/res/wolf.png)
 
-![Optional Text](../master/wolf/src/res/wolf.png)
 
 
 
