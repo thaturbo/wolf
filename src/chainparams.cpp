@@ -202,7 +202,7 @@ public:
         vSeeds.push_back(CDNSSeedData("wolfpack.geekgalaxy.com", "wolfpack.geekgalaxy.com"));
         vSeeds.push_back(CDNSSeedData("nodex.servep2p.com", "nodex.servep2p.com"));
         vSeeds.push_back(CDNSSeedData("209.97.180.26", "209.97.180.26"));
-        vSeeds.push_back(CDNSSeedData("", ""));
+        vSeeds.push_back(CDNSSeedData("wolfx.servep2p.com", "wolfx.servep2p.com"));
         vSeeds.push_back(CDNSSeedData("", ""));
         // vFixedSeeds.clear();
         // vSeeds.clear();
